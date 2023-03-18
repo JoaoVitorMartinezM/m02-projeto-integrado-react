@@ -16,10 +16,11 @@ function CourseCard({ imageUrl, name, category, description, duration }) {
         <img src={clockImg} alt='Ícone de relógio' />
         <p>{duration}h</p>
       </div>
-
-      <Button variant={BUTTON_VARIANT.SECONDARY_OUTLINED} onClick={() => console.log('aa')}>
-        Ver detalhes
-      </Button>
+      <a href="http://localhost:5173/course/1">
+        <Button variant={BUTTON_VARIANT.SECONDARY_OUTLINED} onClick={() => console.log('aa')}>
+          Ver detalhes
+        </Button>
+      </a>
     </div>
   );
 }
