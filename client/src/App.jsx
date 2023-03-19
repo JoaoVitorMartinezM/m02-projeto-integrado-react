@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import PageWrapper from './components/PageWrapper';
 import Footer from './components/Footer';
-import UserContext from './contexts/UserContext';
+import UserContext, {useUserState, UserContextProvider} from './contexts/UserContext';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import HomePage from './pages/HomePage';
@@ -18,12 +18,17 @@ function App() {
 
   const [user, setUser] = useState({name:"Joao", isAdministrator:true});
 
+
+  const Provider = UserContextProvider
+
+
   return (
     <>
 
       <Navbar />
-      <UserContext.Provider value={[user, setUser]}>
+      <Provider value={[user, setUser]}>
         <PageWrapper>
+          
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<HomePage />}/>  
@@ -33,7 +38,7 @@ function App() {
           </BrowserRouter>
           
         </PageWrapper>
-      </UserContext.Provider>
+      </Provider>
 
       <Footer />
     </>

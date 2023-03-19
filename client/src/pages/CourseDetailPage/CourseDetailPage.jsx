@@ -18,10 +18,10 @@ const CourseDetailPage = () => {
             {
                 details && (
                     <>
-                    <h1>Details of {details[0].name} <img src={details[0].imageUrl} width={50}/></h1>
-                    <span>{details[0].category}</span>
-                    <p>{details[0].description}</p>
-                    <span>{details[0].duration}h</span>
+                    <h1>Details of {details[0]?.name} <img src={details[0]?.imageUrl} width={50}/></h1>
+                    <span>{details[0]?.category}</span>
+                    <p>{details[0]?.description}</p>
+                    <span>{details[0]?.duration}h</span>
                     </>
                 )
             }
