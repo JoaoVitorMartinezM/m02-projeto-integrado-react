@@ -17,11 +17,8 @@ import './HomePage.css';
 function HomePage() {
   const {courses, error, isLoading} = useCourseList();
 
-  const [user, _] = useUserContext();
+  const isAdmin = userIsAdministrator();
   
-
-  const admin = userIsAdministrator();
-  console.log(admin)
 
 
   
@@ -31,7 +28,7 @@ function HomePage() {
 
       <div className='HomeTop'>
         <CourseFilter />
-        {user.isAdministrator && <Button variant={BUTTON_VARIANT.SECONDARY}>Cadastrar</Button>}
+        {isAdmin && <Button variant={BUTTON_VARIANT.SECONDARY}>Cadastrar</Button>}
       </div>
       
 
