@@ -71,6 +71,11 @@
             "name": "Joao Vitor",
             "password": "123456",
             "isAdmin": true
+        }, 
+        {
+            "name": "Pedro",
+            "password": "123456",
+            "isAdmin": false
         }
     ]
 }
