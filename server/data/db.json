@@ -65,5 +65,12 @@
             "duration": 6
         }
 
+    ],
+    "users":[
+        {
+            "name": "Joao Vitor",
+            "password": "123456",
+            "isAdmin": true
+        }
     ]
 }
