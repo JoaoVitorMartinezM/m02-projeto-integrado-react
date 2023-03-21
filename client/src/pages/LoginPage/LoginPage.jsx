@@ -4,6 +4,14 @@ import { useState } from 'react'
 import InputGroup from '../../components/InputGroup'
 import { BUTTON_VARIANT } from '../../components/Button/ButtonVariant';
 import Button from '../../components/Button/Button';
+import { useUserContext } from '../../contexts/UserContext';
+
+function updateContext(user){
+    const context = useUserContext()
+    context.user= user
+    console.log(context)
+
+}
 
 const LoginPage = () => {
 
@@ -12,16 +20,22 @@ const LoginPage = () => {
     const {users} = UseAuth()
    
     let aut = false
+    
+    
+        
+    
 
     
 
     const handleSubmmit = (event) => {
 
         users?.forEach((item) => item?.name === user && item?.password === pass ? aut = true: aut)
+
+        
         
         aut ? window.location = 'http://localhost:5173/': ''
     }
-    
+    aut ? updateContext(user) : ''
 
 
     return(

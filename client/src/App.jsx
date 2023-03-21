@@ -16,9 +16,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [user, setUser] = useState({name:"Joao", isAdministrator:true});
-
-
+  
   const Provider = UserContextProvider
 
 
@@ -26,7 +24,7 @@ function App() {
     <>
 
       <Navbar />
-      <Provider value={[user, setUser]}>
+      <Provider value={{user:'', isAdmin:false}}>
         <PageWrapper>
           
           <BrowserRouter>
