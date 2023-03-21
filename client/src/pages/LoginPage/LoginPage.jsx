@@ -2,8 +2,8 @@ import './LoginPage.css'
 import UseAuth from '../../hooks/UseAuth'
 import { useState } from 'react'
 import InputGroup from '../../components/InputGroup'
-import { BUTTON_VARIANT } from '../../components/Button/ButtonVariant';
 import Button from '../../components/Button/Button';
+import {useSetUserState} from '../../contexts/UserContext'
 
 const LoginPage = () => {
 
@@ -18,8 +18,22 @@ const LoginPage = () => {
     const handleSubmmit = (event) => {
 
         users?.forEach((item) => item?.name === user && item?.password === pass ? aut = true: aut)
+
+        // const setContext = useSetUserState()
+
         
-        aut ? window.location = 'http://localhost:5173/': ''
+
+       
+
+        
+        if(aut) { 
+            const filter =  users.filter((item)=> item.name === user)
+            const admin = filter[0].isAdmin
+            // setContext(user, admin)
+            
+            window.location = 'http://localhost:5173/'
+
+        } 
     }
     
 
