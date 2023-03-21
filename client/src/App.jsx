@@ -19,12 +19,16 @@ function App() {
   
   const Provider = UserContextProvider
 
+  const {user, isAdmin} = JSON.parse(localStorage.getItem('login'))
+
+  console.log(user, isAdmin)
+
 
   return (
     <>
 
       <Navbar />
-      <Provider value={{user:'', isAdmin:false}}>
+      <Provider value={{user, isAdmin}}>
         <PageWrapper>
           
           <BrowserRouter>

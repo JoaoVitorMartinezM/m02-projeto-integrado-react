@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import {apiService} from '../../services/api'
+import { useUserContext } from '../../contexts/UserContext';
 
 const UseAuth = () => {
     const [users, setUsers] = useState([]);
@@ -28,4 +29,14 @@ const UseAuth = () => {
     }
 }
 
+const auth = (value)=>{
+
+    const context = useUserContext()
+    context.user= value
+
+    console.log(context)
+    
+}
+
 export default UseAuth
+export {auth}
