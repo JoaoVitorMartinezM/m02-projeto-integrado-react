@@ -3,7 +3,14 @@ import UseAuth from '../../hooks/UseAuth'
 import { useState } from 'react'
 import InputGroup from '../../components/InputGroup'
 import Button from '../../components/Button/Button';
-import {useSetUserState} from '../../contexts/UserContext'
+import { useUserContext } from '../../contexts/UserContext';
+
+function updateContext(user){
+    const context = useUserContext()
+    context.user= user
+    console.log(context)
+
+}
 
 const LoginPage = () => {
 
@@ -12,17 +19,11 @@ const LoginPage = () => {
     const {users} = UseAuth()
    
     let aut = false
-
     
 
     const handleSubmmit = (event) => {
 
         users?.forEach((item) => item?.name === user && item?.password === pass ? aut = true: aut)
-
-        // const setContext = useSetUserState()
-
-        
-
        
 
         
@@ -35,7 +36,7 @@ const LoginPage = () => {
 
         } 
     }
-    
+    aut ? updateContext(user) : ''
 
 
     return(

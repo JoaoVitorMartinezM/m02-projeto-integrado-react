@@ -25,3 +25,19 @@ O projeto desenvolvido é um portfólio de cursos.
 Para simular o dia a dia nas empresas vamos seguir um layout desenvolvido no figma.
 
 [Link do figma](https://www.figma.com/file/EgSy0PHZpnTDcvF5axe3Ee/DevInilog?node-id=3%3A1322&t=aGJqLA8XjzAJ8OxD-1)
+
+## Inicializar o *JSON-SERVER*
+
+``` 
+cd server/
+npm install json-server
+npm start
+```
+
+## Inicializar o *Client*
+
+```
+cd client/
+npm install
+npm run dev
+```

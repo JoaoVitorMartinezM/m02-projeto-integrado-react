@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react"
 
-const UserContext = createContext([])
+const UserContext = createContext({user:'', isAdmin:false})
 
 export const UserContextProvider = UserContext.Provider
 
@@ -9,13 +9,8 @@ export function useUserContext(){
 }
 
 export function useUserState(){
-    const [user] = useUserContext()
+    const user = useUserContext()
     return user
-}
-
-export function useSetUserState(){
-    const [_, setUser] = useUserContext()
-    return setUser
 }
 
 
