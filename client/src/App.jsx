@@ -1,14 +1,14 @@
 import Navbar from './components/Navbar';
 import PageWrapper from './components/PageWrapper';
 import Footer from './components/Footer';
-import UserContext, {useUserState, UserContextProvider} from './contexts/UserContext';
+import {UserContextProvider, useUserContext} from './contexts/UserContext';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import HomePage from './pages/HomePage';
 import CourseDetailPage from './pages/CourseDetailPage'
 import LoginPage from './pages/LoginPage';
 
-import { useState } from 'react';
+
 
 
 
@@ -16,13 +16,20 @@ import { useState } from 'react';
 
 function App() {
 
+  if(localStorage.length == 0){
+    localStorage.setItem('login', JSON.stringify({user:'', isAdmin:false}))
+  }
+  const {user, isAdmin} = JSON.parse(localStorage.getItem('login'))
   
   const Provider = UserContextProvider
 
-  const {user, isAdmin} = JSON.parse(localStorage.getItem('login'))
+  const context = useUserContext()
+
+  
+  context.user = user
+  context.isAdmin = isAdmin
 
   console.log(user, isAdmin)
-
 
   return (
     <>

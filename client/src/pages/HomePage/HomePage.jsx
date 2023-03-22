@@ -3,14 +3,12 @@ import { Spinner} from 'phosphor-react'
 import CourseFilter from '../../components/CourseFilter';
 import CourseList from '../../components/CourseList';
 import useCourseList from '../../hooks/useCourseList';
-
-import {  useUserContext } from '../../contexts/UserContext'
 import Button, { BUTTON_VARIANT } from '../../components/Button';
 import {userIsAdministrator} from '../../hooks/UseUserInfo/UseUserInfo';
 
 
 import './HomePage.css';
-// import userIsAdministrator from '../../hooks/UseUserInfo';
+
 
 
 
@@ -18,6 +16,7 @@ function HomePage() {
   const {courses, error, isLoading} = useCourseList();
 
   const isAdmin = userIsAdministrator();
+  console.log(isAdmin)
   
 
 

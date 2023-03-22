@@ -29,8 +29,9 @@ const LoginPage = () => {
         if(aut) { 
             const filter =  users.filter((item)=> item?.name === user)
             const isAdmin = filter[0]?.isAdmin
-
+            localStorage.clear()
             localStorage.setItem('login', JSON.stringify({user, isAdmin}))
+            
             
             
             window.location = 'http://localhost:5173/'
