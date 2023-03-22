@@ -13,7 +13,7 @@ function Navbar() {
         <img src='/logo.png' alt='Logo' />
         <h1>DEVinCursos</h1>
       </div>
-      {userContext.user !== '' && <span>Logado</span>}
+      {userContext.user !== '' ? <span>Logado</span> : <span><a href='/login'>Login</a></span>}
     </header>
   );
 }
