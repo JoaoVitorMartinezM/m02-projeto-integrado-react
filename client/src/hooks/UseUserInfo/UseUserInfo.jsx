@@ -1,8 +1,7 @@
-import {useUserState} from '../../contexts/UserContext'
+import { useUserState } from '../../contexts/UserContext'
 
-export const userIsAdministrator = ()=> {
-    const user = useUserState()
-    
-    return user.isAdmin
+export const userIsAdministrator = () => {
+  const user = useUserState()
 
+  return user.isAdmin
 }

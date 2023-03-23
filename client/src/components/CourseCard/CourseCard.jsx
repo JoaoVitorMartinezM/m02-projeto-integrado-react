@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import clockImg from '../../assets/clock.png';
-import Button, { BUTTON_VARIANT } from '../Button';
+import clockImg from '../../assets/clock.png'
+import Button, { BUTTON_VARIANT } from '../Button'
 
-import './CourseCard.css';
-function CourseCard({ imageUrl, name, category, description, duration }) {
+import './CourseCard.css'
+function CourseCard ({ imageUrl, name, category, description, duration }) {
   return (
     <div className='courseCardContainer'>
       <div className='courseCardHeader'>
@@ -22,7 +22,7 @@ function CourseCard({ imageUrl, name, category, description, duration }) {
         </Button>
       </a>
     </div>
-  );
+  )
 }
 
 CourseCard.propTypes = {
@@ -30,7 +30,7 @@ CourseCard.propTypes = {
   category: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   duration: PropTypes.number.isRequired,
-  imageUrl: PropTypes.string,
-};
+  imageUrl: PropTypes.string
+}
 
-export default CourseCard;
+export default CourseCard

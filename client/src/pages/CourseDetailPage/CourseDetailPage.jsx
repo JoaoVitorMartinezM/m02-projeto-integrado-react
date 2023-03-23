@@ -1,19 +1,17 @@
 import './CourseDetailPage.css'
 import { useParams } from 'react-router-dom'
-import useCourseList from '../../hooks/useCourseList';
-
+import useCourseList from '../../hooks/useCourseList'
 
 const CourseDetailPage = () => {
+  const { id } = useParams()
 
-    const {id} = useParams()
+  const { courses, error, isLoading } = useCourseList()
 
-    const {courses, error, isLoading} = useCourseList()
+  const details = courses.filter((course) => course.id == id && course)
 
-    const details = courses.filter((course) => course.id == id && course )
+  console.log(details)
 
-    console.log(details)
-
-    return(
+  return (
         <>
             {
                 details && (
@@ -25,13 +23,10 @@ const CourseDetailPage = () => {
                     </>
                 )
             }
-           
 
         </>
-        
 
-        
-    )
+  )
 }
 
 export default CourseDetailPage

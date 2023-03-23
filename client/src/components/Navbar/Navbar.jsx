@@ -1,8 +1,7 @@
-import './Navbar.css';
-import {  useUserState } from '../../contexts/UserContext'
+import './Navbar.css'
+import { useUserState } from '../../contexts/UserContext'
 
-function Navbar() {
-
+function Navbar () {
   const userContext = useUserState()
 
   console.log(userContext.isAdmin)
@@ -15,7 +14,7 @@ function Navbar() {
       </div>
       {userContext.user !== '' ? <span>Logado</span> : <span><a href='/login'>Login</a></span>}
     </header>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

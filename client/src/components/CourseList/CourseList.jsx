@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import CourseCard from '../CourseCard';
-import './CourseList.css';
+import PropTypes from 'prop-types'
+import CourseCard from '../CourseCard'
+import './CourseList.css'
 
-function CourseList({ list }) {
+function CourseList ({ list }) {
   return (
     <ul className='courseListContainer'>
       {list.map((course) => (
@@ -17,7 +17,7 @@ function CourseList({ list }) {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
 CourseList.propTypes = {
@@ -27,13 +27,13 @@ CourseList.propTypes = {
       category: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       duration: PropTypes.number.isRequired,
-      imageUrl: PropTypes.string,
-    }),
-  ),
-};
+      imageUrl: PropTypes.string
+    })
+  )
+}
 
 CourseList.defaultProps = {
-  list: [],
-};
+  list: []
+}
 
-export default CourseList;
+export default CourseList
