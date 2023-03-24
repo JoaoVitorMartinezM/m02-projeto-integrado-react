@@ -5,6 +5,7 @@ import { UserContextProvider, useUserContext } from './contexts/UserContext'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React from 'react'
 import HomePage from './pages/HomePage'
+import RegisterPage from './pages/RegisterPage'
 import CourseDetailPage from './pages/CourseDetailPage'
 import LoginPage from './pages/LoginPage'
 
@@ -35,6 +36,7 @@ function App () {
               <Route path='/' element={<HomePage />}/>
               <Route path='/course/:id' element={<CourseDetailPage />}/>
               <Route path='/login' element={<LoginPage />}/>
+              <Route path='/register' element={<RegisterPage />} />
             </Routes>
           </BrowserRouter>
 
