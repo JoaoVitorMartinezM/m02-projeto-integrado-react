@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-
+import React from 'react'
 import clockImg from '../../assets/clock.png'
 import Button, { BUTTON_VARIANT } from '../Button'
 

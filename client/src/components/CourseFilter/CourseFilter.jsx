@@ -1,6 +1,6 @@
 import Button, { BUTTON_VARIANT } from '../Button'
 import InputGroup from '../InputGroup'
-
+import React from 'react'
 import './CourseFilter.css'
 
 function CourseFilter () {

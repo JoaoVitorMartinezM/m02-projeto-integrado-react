@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import CourseCard from '../CourseCard'
 import './CourseList.css'
+import React from 'react'
 
 function CourseList ({ list }) {
   return (

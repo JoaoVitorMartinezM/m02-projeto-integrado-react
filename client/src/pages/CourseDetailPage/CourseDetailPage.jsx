@@ -1,5 +1,6 @@
 import './CourseDetailPage.css'
 import { useParams } from 'react-router-dom'
+import React from 'react'
 import useCourseList from '../../hooks/useCourseList'
 
 const CourseDetailPage = () => {
@@ -7,7 +8,7 @@ const CourseDetailPage = () => {
 
   const { courses, error, isLoading } = useCourseList()
 
-  const details = courses.filter((course) => course.id == id && course)
+  const details = courses.filter((course) => course.id === id && course)
 
   console.log(details)
 

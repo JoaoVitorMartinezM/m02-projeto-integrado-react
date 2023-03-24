@@ -1,6 +1,6 @@
 import './LoginPage.css'
-import UseAuth, { auth } from '../../hooks/UseAuth'
-import { useState } from 'react'
+import UseAuth from '../../hooks/UseAuth'
+import React, { useState } from 'react'
 import InputGroup from '../../components/InputGroup'
 import Button from '../../components/Button/Button'
 
@@ -12,7 +12,7 @@ const LoginPage = () => {
   let aut = false
 
   const handleSubmmit = (event) => {
-    users?.forEach((item) => item?.name === user && item?.password === pass ? aut = true : aut)
+    users?.forEach((item) => item?.name === user && item?.password === pass ? (aut = true) : (aut))
 
     if (aut) {
       const filter = users.filter((item) => item?.name === user)

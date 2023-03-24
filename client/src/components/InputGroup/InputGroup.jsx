@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-
+import React from 'react'
 import './InputGroup.css'
 
 function InputGroup ({ labelText, helperText, ...props }) {

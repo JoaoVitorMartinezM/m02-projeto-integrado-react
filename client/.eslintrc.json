@@ -19,7 +19,7 @@
         "prettier"
     ],
     "rules": {
-        "no-unused-vars": "warn",
-        "react-in-jsx-scope" : false
+        "no-unused-vars": "off",
+        "react/prop-types": false
     }
 }

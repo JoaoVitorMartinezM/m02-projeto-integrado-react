@@ -1,8 +1,7 @@
-
-
 import { Spinner } from 'phosphor-react'
 import CourseFilter from '../../components/CourseFilter'
 import CourseList from '../../components/CourseList'
+import React from 'react'
 import useCourseList from '../../hooks/useCourseList'
 import Button, { BUTTON_VARIANT } from '../../components/Button'
 import { userIsAdministrator } from '../../hooks/UseUserInfo/UseUserInfo'
