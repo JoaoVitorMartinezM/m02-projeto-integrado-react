@@ -63,6 +63,15 @@
       "category": "front-end",
       "description": "Curso sobre React Js",
       "duration": 6
+    },
+    {
+      "name": "JavaScript",
+      "imageUrl": "https://hcode.azureedge.net/courses/JSFULL/logo_1632447024880.svg",
+      "category": "Backend",
+      "description": "Basic",
+      "duration": "130",
+      "targetMarket": "Backend",
+      "id": 9
     }
   ],
   "users": [

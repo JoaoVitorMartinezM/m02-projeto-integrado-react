@@ -11,6 +11,10 @@ const useCourseRegister = () => {
     const response = await apiService.post('/courses', course)
     setError(response.error)
     setData(response.data)
+    if (response.error) {
+      alert(response.error)
+      return
+    }
     setIsSubmitting(false)
   }
   return {

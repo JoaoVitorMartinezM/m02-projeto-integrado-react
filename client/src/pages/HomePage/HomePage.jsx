@@ -5,21 +5,26 @@ import React from 'react'
 import useCourseList from '../../hooks/useCourseList'
 import Button, { BUTTON_VARIANT } from '../../components/Button'
 import { userIsAdministrator } from '../../hooks/UseUserInfo/UseUserInfo'
+import { useNavigate } from 'react-router-dom'
 
 import './HomePage.css'
 
 function HomePage () {
   const { courses, error, isLoading } = useCourseList()
-
+  const navigate = useNavigate()
   const isAdmin = userIsAdministrator()
   console.log(isAdmin)
+
+  const handleClick = () => {
+    navigate('/register')
+  }
 
   return (
     <div className='homePageContainer'>
 
       <div className='HomeTop'>
         <CourseFilter />
-        {isAdmin && <Button variant={BUTTON_VARIANT.SECONDARY}>Cadastrar</Button>}
+        {isAdmin && <Button variant={BUTTON_VARIANT.SECONDARY} onClick={ handleClick }>Cadastrar</Button>}
       </div>
 
       {isLoading && <Spinner width={100}/>}
