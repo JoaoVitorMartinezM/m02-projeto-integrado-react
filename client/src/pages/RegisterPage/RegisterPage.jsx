@@ -6,6 +6,8 @@ import './RegisterPage.css'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import useCourseRegister from '../../hooks/useCourseRegister'
+import { useNavigate } from 'react-router-dom'
 
 const schema = yup.object().shape({
   name: yup.string().required('This is required'),
@@ -17,6 +19,8 @@ const schema = yup.object().shape({
 })
 
 const RegisterPage = () => {
+  const navigate = useNavigate()
+
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: '',
@@ -30,32 +34,35 @@ const RegisterPage = () => {
   })
 
   const onSubmit = (data) => {
-    console.log(data)
+    registerCourse(data)
   }
+
+  const { isSubmitting, registerCourse } = useCourseRegister()
+
   return (
         <form className="formContainer" onSubmit={handleSubmit(onSubmit)}>
             <h2>Register Course</h2>
             <div>
-              <InputGroup labelText="Name" placeholder="Name" { ...register('name') } />
-              <InputGroup labelText="Icon" placeholder="Url for icon" { ...register('imageUrl') } />
+              <InputGroup labelText="Name" helperText={errors?.name?.message} placeholder="Name" { ...register('name') } />
+              <InputGroup labelText="Icon" helperText={errors?.imageUrl?.message} placeholder="Url for icon" { ...register('imageUrl') } />
 
             </div>
             <div>
-              <InputGroup labelText="Duration" placeholder="set Duration" { ...register('duration') } />
-              <InputGroup labelText="Category" placeholder="Category" { ...register('category') } />
+              <InputGroup labelText="Duration" helperText={errors?.duration?.message} placeholder="set Duration" { ...register('duration') } />
+              <InputGroup labelText="Category" placeholder="Category" helperText={errors?.category?.message} { ...register('category') } />
 
             </div>
             <div>
-              <InputGroup labelText="Description" placeholder="Type a description" { ...register('description') } />
-              <InputGroup labelText="TargetMarket" placeholder="TargetMarket" { ...register('targetMarket') }/>
+              <InputGroup labelText="Description" placeholder="Type a description" helperText={errors?.description?.message} { ...register('description') } />
+              <InputGroup labelText="TargetMarket" placeholder="TargetMarket" helperText={errors?.targetMarket?.message} { ...register('targetMarket') }/>
 
             </div>
             <div>
               <InputGroup labelText="Content" placeholder="Content" />
               <Button type='button' variant={ BUTTON_VARIANT.SECONDARY_OUTLINED }>Add</Button>
             </div>
-            <Button type='submit' variant={ BUTTON_VARIANT.PRIMARY }>Register</Button>
-            <Button type='button' variant={ BUTTON_VARIANT.PRIMARY_LINK } onClick={ () => { } }>CANCEL</Button>
+            <Button type='submit' disabled={ isSubmitting } variant={ BUTTON_VARIANT.PRIMARY }>Register</Button>
+            <Button type='button' onClick={ () => navigate('/') } variant={ BUTTON_VARIANT.PRIMARY_LINK }>CANCEL</Button>
         </form>
   )
 }
