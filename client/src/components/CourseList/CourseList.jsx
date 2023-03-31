@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import CourseCard from '../CourseCard'
-import './CourseList.css'
 import React from 'react'
+import { CourseListContainer } from './styles'
 
 function CourseList ({ list }) {
   return (
-    <ul className='courseListContainer'>
+    <CourseListContainer>
       {list.map((course) => (
         <li key={course.id}>
           <CourseCard
@@ -17,7 +17,7 @@ function CourseList ({ list }) {
           />
         </li>
       ))}
-    </ul>
+    </CourseListContainer>
   )
 }
 

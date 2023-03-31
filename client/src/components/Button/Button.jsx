@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { BUTTON_VARIANT } from './ButtonVariant'
-
-import './Button.css'
+import { ButtonStyled } from './style'
 
 function Button ({ children, variant = BUTTON_VARIANT.PRIMARY, ...props }) {
   return (
-    <button className={`button ${variant}`} {...props}>
+    <ButtonStyled variant={variant} {...props}>
       {children}
-    </button>
+    </ButtonStyled>
   )
 }
 

@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
-import './InputGroup.css'
+import { Container, Input, Label, Span } from './style'
 
 const InputGroup = forwardRef(({ labelText, helperText, ...props }, ref) => {
   return (
-    <div className='container'>
+    <Container>
       {labelText && (
-        <label htmlFor='input' className='label'>
+        <Label htmlFor='input'>
           {labelText}
-        </label>
+        </Label>
       )}
 
-      <input id='input' className='input' ref={ref} {...props} />
+      <Input id='input' ref={ref} {...props} />
 
-      {!!helperText && <span className='error'>{helperText}</span>}
-    </div>
+      {!!helperText && <Span>{helperText}</Span>}
+    </Container>
   )
 })
 

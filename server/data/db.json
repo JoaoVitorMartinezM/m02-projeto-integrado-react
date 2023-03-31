@@ -72,6 +72,15 @@
       "duration": "130",
       "targetMarket": "Backend",
       "id": 9
+    },
+    {
+      "name": "Teste",
+      "imageUrl": "https://eslint.org/icon.svg",
+      "category": "Backend",
+      "description": "Description",
+      "duration": "20",
+      "targetMarket": "Backend",
+      "id": 10
     }
   ],
   "users": [

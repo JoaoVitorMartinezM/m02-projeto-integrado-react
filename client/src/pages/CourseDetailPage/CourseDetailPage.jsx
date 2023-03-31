@@ -6,7 +6,7 @@ import useCourseList from '../../hooks/useCourseList'
 const CourseDetailPage = () => {
   const { id } = useParams()
 
-  const { courses, error, isLoading } = useCourseList()
+  const { courses } = useCourseList()
 
   const details = courses.filter((course) => course.id === id && course)
 

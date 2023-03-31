@@ -1,11 +1,12 @@
-import './Footer.css'
+
 import React from 'react'
+import { FooterContainer } from './styles'
 
 function Footer () {
   return (
-    <footer className='footerContainer'>
+    <FooterContainer>
       <p>DEVinCursos | {new Date().getFullYear()}</p>
-    </footer>
+    </FooterContainer>
   )
 }
 
