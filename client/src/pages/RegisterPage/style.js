@@ -5,6 +5,7 @@ export const FormContainer = styled.form`
     height: 100%;
 
     background-color: white;
+    background: ${({ theme }) => console.log(theme.colors.darkGray)};
 
     display: flex;
     flex-grow: 1;

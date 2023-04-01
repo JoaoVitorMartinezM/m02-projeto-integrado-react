@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage'
 import RegisterPage from './pages/RegisterPage'
 import CourseDetailPage from './pages/CourseDetailPage'
 import LoginPage from './pages/LoginPage'
+import { ThemeProvider } from 'styled-components'
+import { themes } from './theme'
 
 function App () {
   if (localStorage.length === 0) {
@@ -29,6 +31,7 @@ function App () {
 
       <Navbar />
       <Provider value={{ user, isAdmin }}>
+        <ThemeProvider theme={themes}>
         <PageWrapper>
 
           <BrowserRouter>
@@ -41,6 +44,7 @@ function App () {
           </BrowserRouter>
 
         </PageWrapper>
+        </ThemeProvider>
       </Provider>
 
       <Footer />
