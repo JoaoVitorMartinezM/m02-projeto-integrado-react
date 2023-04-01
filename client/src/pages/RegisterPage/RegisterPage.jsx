@@ -2,7 +2,7 @@ import React from 'react'
 import { BUTTON_VARIANT } from '../../components/Button/ButtonVariant'
 import InputGroup from '../../components/InputGroup'
 import Button from '../../components/Button'
-import './RegisterPage.css'
+import { FormContainer } from './style'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -40,7 +40,7 @@ const RegisterPage = () => {
   const { isSubmitting, registerCourse } = useCourseRegister()
 
   return (
-        <form className="formContainer" onSubmit={handleSubmit(onSubmit)}>
+        <FormContainer onSubmit={handleSubmit(onSubmit)}>
             <h2>Register Course</h2>
             <div>
               <InputGroup labelText="Name" helperText={errors?.name?.message} placeholder="Name" { ...register('name') } />
@@ -63,7 +63,7 @@ const RegisterPage = () => {
             </div>
             <Button type='submit' disabled={ isSubmitting } variant={ BUTTON_VARIANT.PRIMARY }>Register</Button>
             <Button type='button' onClick={ () => navigate('/') } variant={ BUTTON_VARIANT.PRIMARY_LINK }>CANCEL</Button>
-        </form>
+        </FormContainer>
   )
 }
 

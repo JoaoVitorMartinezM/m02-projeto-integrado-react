@@ -1,8 +1,9 @@
-import './LoginPage.css'
+
 import UseAuth from '../../hooks/UseAuth'
 import React, { useState } from 'react'
 import InputGroup from '../../components/InputGroup'
 import Button from '../../components/Button/Button'
+import { LoginContainer } from './style'
 
 const LoginPage = () => {
   const [user, setUser] = useState('')
@@ -25,11 +26,11 @@ const LoginPage = () => {
   }
 
   return (
-        <div className='loginContainer'>
+        <LoginContainer>
             <InputGroup labelText="Login" placeholder="Type your username" onChange={(event) => setUser(event.target.value)}/>
             <InputGroup labelText="Password" placeholder="Type your pass" onChange={(event) => setPass(event.target.value)}/>
             <Button onClick={handleSubmmit}>Submit</Button>
-        </div>
+        </LoginContainer>
 
   )
 }

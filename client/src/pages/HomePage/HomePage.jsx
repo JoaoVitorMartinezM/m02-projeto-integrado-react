@@ -6,8 +6,7 @@ import useCourseList from '../../hooks/useCourseList'
 import Button, { BUTTON_VARIANT } from '../../components/Button'
 import { userIsAdministrator } from '../../hooks/UseUserInfo/UseUserInfo'
 import { useNavigate } from 'react-router-dom'
-
-import './HomePage.css'
+import { HomePageContainer, HomeTop } from './style'
 
 function HomePage () {
   const { courses, error, isLoading } = useCourseList()
@@ -20,18 +19,18 @@ function HomePage () {
   }
 
   return (
-    <div className='homePageContainer'>
+    <HomePageContainer>
 
-      <div className='HomeTop'>
+      <HomeTop>
         <CourseFilter />
         {isAdmin && <Button variant={BUTTON_VARIANT.SECONDARY} onClick={ handleClick }>Cadastrar</Button>}
-      </div>
+      </HomeTop>
 
       {isLoading && <Spinner width={100}/>}
       {isLoading && !!error && <p>{error}</p>}
       {!!courses.length && <CourseList list={courses} />}
 
-    </div>
+    </HomePageContainer>
   )
 }
 
