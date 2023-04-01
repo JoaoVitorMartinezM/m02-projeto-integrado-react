@@ -6,15 +6,16 @@ import * as yup from 'yup'
 import { UserRegisterContainer } from './style'
 import InputGroup from '../../components/InputGroup'
 import Button, { BUTTON_VARIANT } from '../../components/Button'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const schema = yup.object().shape({
   name: yup.string().required('This is required'),
-  password: yup.string().url('A URL is required').required('This is required'),
-  isAdmin: yup.boolean().required('This is required')
+  password: yup.string().required('This is required'),
+  isAdmin: yup.boolean().notRequired()
 })
 
 const UserRegisterPage = () => {
+  const navigate = useNavigate()
   const { isSubmitting, registerUser } = useUserRegister()
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
@@ -24,21 +25,20 @@ const UserRegisterPage = () => {
     },
     resolver: yupResolver(schema)
   })
+
   const onSubmit = (data) => {
     registerUser(data)
   }
 
   return (
       <UserRegisterContainer onSubmit={handleSubmit(onSubmit)}>
-        <h1>TEste</h1>
-        <h2>Register Course</h2>
-        <div>
-          <InputGroup labelText="Name" helperText={errors?.name?.message} placeholder="Name" { ...register('name') } />
-          <InputGroup labelText="Password" helperText={errors?.imageUrl?.message} placeholder="Url for icon" { ...register('imageUrl') } />
+        <h2>Register User</h2>
 
-        </div>
+        <InputGroup labelText="Name" helperText={errors?.name?.message} placeholder="Name" { ...register('name') } />
+        <InputGroup labelText="Password" helperText={errors?.password?.message} placeholder="Password" { ...register('password') } />
+
         <Button type='submit' disabled={ isSubmitting } variant={ BUTTON_VARIANT.PRIMARY }>Register</Button>
-        <Button type='button' onClick={ () => Navigate('/') } variant={ BUTTON_VARIANT.PRIMARY }>CANCEL</Button>
+        <Button type='button' onClick={ () => navigate('/') } variant={ BUTTON_VARIANT.PRIMARY }>CANCEL</Button>
 
       </UserRegisterContainer>
 

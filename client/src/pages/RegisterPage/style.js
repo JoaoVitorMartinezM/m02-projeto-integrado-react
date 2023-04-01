@@ -8,7 +8,6 @@ export const FormContainer = styled.form`
     background: ${({ theme }) => console.log(theme.colors.darkGray)};
 
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;

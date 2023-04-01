@@ -105,6 +105,12 @@
       "password": "123456",
       "isAdmin": true,
       "id": 1001
+    },
+    {
+      "name": "contabil.marisa",
+      "password": "123456",
+      "isAdmin": false,
+      "id": 1002
     }
   ]
 }
