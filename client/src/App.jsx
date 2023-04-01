@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage'
 import { ThemeProvider } from 'styled-components'
 import { themes } from './theme'
 import UserRegisterPage from './pages/UserRegisterPage/UserRegisterPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App () {
   if (localStorage.length === 0) {
@@ -42,6 +43,7 @@ function App () {
               <Route path='/login' element={<LoginPage />}/>
               <Route path='/register' element={<RegisterPage />} />
               <Route path='/user/register' element={<UserRegisterPage/> }/>
+              <Route path='/*' element={<NotFoundPage/> }/>
             </Routes>
           </BrowserRouter>
 
