@@ -93,6 +93,18 @@
       "name": "Pedro",
       "password": "123456",
       "isAdmin": false
+    },
+    {
+      "name": "Juliana Vieira",
+      "password": "123456",
+      "isAdmin": true,
+      "id": 1000
+    },
+    {
+      "name": "Jasmim Vieira",
+      "password": "123456",
+      "isAdmin": true,
+      "id": 1001
     }
   ]
 }

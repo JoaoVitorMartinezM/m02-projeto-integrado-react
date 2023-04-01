@@ -10,6 +10,7 @@ import CourseDetailPage from './pages/CourseDetailPage'
 import LoginPage from './pages/LoginPage'
 import { ThemeProvider } from 'styled-components'
 import { themes } from './theme'
+import UserRegisterPage from './pages/UserRegisterPage/UserRegisterPage'
 
 function App () {
   if (localStorage.length === 0) {
@@ -40,6 +41,7 @@ function App () {
               <Route path='/course/:id' element={<CourseDetailPage />}/>
               <Route path='/login' element={<LoginPage />}/>
               <Route path='/register' element={<RegisterPage />} />
+              <Route path='/user/register' element={<UserRegisterPage/> }/>
             </Routes>
           </BrowserRouter>
 
